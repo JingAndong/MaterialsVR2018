@@ -77,4 +77,10 @@ Shader "MixedRealityToolkit/Examples/UnlitTriplanar"
 			fixed4 frag(v2f i) : SV_Target
 			{
 				UNITY_SETUP_INSTANCE_ID(i);
-				// Return the color with the diffuse color
+				// Return the color with the diffuse color.
+				return  UNITY_ACCESS_INSTANCED_PROP(_Color_arr, _Color) * fixed4(i.diffuse, 1.0);
+			}
+			ENDCG
+		}
+	}
+}

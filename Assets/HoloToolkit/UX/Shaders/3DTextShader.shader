@@ -104,4 +104,11 @@ Shader "MixedRealityToolkit/3DTextShader"
 				UNITY_SETUP_INSTANCE_ID(i);
 				half4 col = i.color;
 				col.a *= tex2D(_MainTex, i.texcoord).a;
-				col = col * UNITY_ACCESS_INSTANCED_PROP(_C
+				col = col * UNITY_ACCESS_INSTANCED_PROP(_Color_arr, _Color);
+				clip (col.a - 0.01);
+				return col;
+            }
+            ENDCG
+        }
+    }
+}

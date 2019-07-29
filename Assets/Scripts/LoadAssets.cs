@@ -25,6 +25,7 @@ public class LoadAssets: MonoBehaviour
             yield return null;
     	// load assetBundle from web server
         // The file will only be loaded from the disk cache if it has previously been downloaded with the same version parameter
+        /*
         WWW www = WWW.LoadFromCacheOrDownload(url, 1);
         yield return www;
         if(!string.IsNullOrEmpty(www.error))
@@ -33,14 +34,15 @@ public class LoadAssets: MonoBehaviour
             yield return null;
         }
         AssetBundle assetBundle = www.assetBundle;
-        /*
+        */
+        
         // load assetBundle from local path
         string url = Application.dataPath + "/../AssetBundles/Android/molecules";
         var assetBundle = AssetBundle.LoadFromFile(url);
         if (assetBundle == null) {
             Debug.Log("Failed to load AssetBundle!");
         }
-        */
+        
         // between 0 ~ (count-1)
         yield return new WaitForSeconds(0.1f);
         int random_number = Mathf.RoundToInt(Random.value * (uiManager.count - 1));
