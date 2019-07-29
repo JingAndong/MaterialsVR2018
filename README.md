@@ -1,1 +1,2 @@
-# MaterialsVR2018
+# MaterialsVR
+NCSA Project
